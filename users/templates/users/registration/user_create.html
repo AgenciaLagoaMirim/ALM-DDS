@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="row align-items-center justify-content-center">
+
+    <form class="col-md-6 border shadow-sm p-3" method="post" >
+        {% csrf_token %}
+        {{form.errors}}
+        {{form}}
+        <button type="submit" class="btn btn-dark mt-3" value="Save">Salvar</button>
+        <a class="link-dark" href="{% url 'login' %}">Cancelar</a>
+    </form>
+
+</div>
+
+{% endblock %}
