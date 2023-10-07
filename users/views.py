@@ -11,7 +11,7 @@ from django.contrib.auth.views import (
 )
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.shortcuts import redirect, render
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views import View
 from django.views.generic.edit import CreateView, UpdateView
 
@@ -98,6 +98,9 @@ class UserPasswordUpdateView(PasswordChangeView):
 
 class UserPasswordUpdateDoneView(PasswordChangeDoneView):
     template_name = "users/registration/password_update_done.html"
+
+    def get_success_url(self):
+        return reverse('password_update_done')
 
 
 class UserPasswordResetView(PasswordResetView):

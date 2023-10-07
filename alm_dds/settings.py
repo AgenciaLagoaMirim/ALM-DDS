@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # apps
     "users",
+    "core",
     # terceiros
     "corsheaders",
 ]
@@ -83,7 +84,7 @@ ROOT_URLCONF = "alm_dds.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -184,4 +185,6 @@ SESSION_TIMEOUT_REDIRECT = "http://localhost:8000/"
 
 AUTH_USER_MODEL = "users.CustomUser"
 LOGIN_URL = "/users/login/"
-LOGIN_REDIRECT_URL = "/core/home/"
+LOGIN_REDIRECT_URL = "home"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
