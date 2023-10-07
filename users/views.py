@@ -100,7 +100,7 @@ class UserPasswordUpdateDoneView(PasswordChangeDoneView):
     template_name = "users/registration/password_update_done.html"
 
     def get_success_url(self):
-        return reverse('password_update_done')
+        return reverse("password_update_done")
 
 
 class UserPasswordResetView(PasswordResetView):
