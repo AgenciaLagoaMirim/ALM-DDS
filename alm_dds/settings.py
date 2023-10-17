@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     # apps
     "users.apps.UsersConfig",
     "core.apps.CoreConfig",
+    "spd.apps.SpdConfig",
     # terceiros
     "corsheaders",
 ]
