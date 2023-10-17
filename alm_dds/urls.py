@@ -7,6 +7,7 @@ urlpatterns = [
     path("", include("core.urls")),
     path("admin/", admin.site.urls),
     path("users/", include("users.urls")),
+    path("readings/", include("readings.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = "users.views.custom_404_view"

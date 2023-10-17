@@ -4,7 +4,7 @@ ALM - Data Dash System
 Autores:
 
         - Jamilson Do Nascimento
-        - Mateus
+        - Mateus Santin
         - George
         - Gilberto Loguercio Collares
 
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "core.apps.CoreConfig",
     "spd.apps.SpdConfig",
+    "readings.apps.ReadingsConfig",
     # terceiros
     "corsheaders",
 ]
