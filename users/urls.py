@@ -22,7 +22,7 @@ urlpatterns = [
     path(
         "password_update_done/",
         UserPasswordUpdateDoneView.as_view(),
-        name="password_update_done",
+        name="password_change_done",
     ),
     path("password_reset/", UserPasswordResetView.as_view(), name="password_reset"),
     path(

@@ -7,6 +7,10 @@ from .managers import CustomUserManager
 
 
 class CustomUser(AbstractUser, PermissionsMixin):
+    """
+    Sobreposição de AbstractUser.
+    """
+
     TYPE_USER = [
         ("adm", "administrator"),
         ("col", "collaborator"),
