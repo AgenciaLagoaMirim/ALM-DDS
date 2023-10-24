@@ -23,6 +23,10 @@ import os
 from corsheaders.defaults import default_headers
 from dotenv import load_dotenv
 
+APPEND_SLASH = False
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
@@ -37,6 +41,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = [
+    "*",
     "localhost",
     "127.0.0.1",
     "10.20.224.233",
@@ -75,12 +80,15 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
+    "access-control-allow-credentials",
+    "content-type",
+    "X-Csrftoken",
     "X-Register",
 ]
 
 # CORS Config
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = False
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = "alm_dds.urls"
 

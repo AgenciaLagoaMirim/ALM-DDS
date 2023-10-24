@@ -7,7 +7,12 @@ class Station(models.Model):
     name = models.CharField(max_length=255)
     location = models.CharField(max_length=30)
     user_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    access_token = models.CharField(max_length=255)  # string para referencia de acesso
+    access_token = models.CharField(
+        max_length=255, null=False
+    )  # string para referencia de acesso
+    access_station = models.CharField(
+        max_length=10, null=False
+    )  # srting para nome fererencia
 
     class Meta:
         managed = True
@@ -44,4 +49,4 @@ class DataParameter(models.Model):
         verbose_name_plural = "DataParameters"
 
     def __str__(self):
-        return self.station_id
+        return str(self.station_id)
